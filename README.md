@@ -12,6 +12,5 @@ Uses Maven to build (tests are currently broken and need fixing).
 
 
 Entry Points:
-
-Client: ./src/main/java/com/erici/boggle/client/Main.java
-Server: ./src/main/java/com/erici/boggle/Main.java
+* Client: com.erici.boggle.client.Main
+* Server: com.erici.boggle.server.BoggleServer
