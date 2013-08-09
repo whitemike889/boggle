@@ -15,6 +15,7 @@ import com.swabunga.spell.event.SpellChecker;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Enumeration;
@@ -66,7 +67,10 @@ public class SpellCheckerTool
             setSpellChecker(new SpellChecker());
             for(int i=0;i<SPELL_CHECKERS.length;i++)
             {
-                SpellDictionary dictionary = new SpellDictionaryHashMap(new InputStreamReader(ClassLoader.getSystemResourceAsStream(SPELL_CHECKERS[i])));
+                ClassLoader loader = getClass().getClassLoader();
+                InputStream in = loader.getResourceAsStream(SPELL_CHECKERS[i]);
+                SpellDictionary dictionary = new SpellDictionaryHashMap(new InputStreamReader(in));
+                // SpellDictionary dictionary = new SpellDictionaryHashMap(new InputStreamReader(getClass().getClassLoader().getSystemResourceAsStream(SPELL_CHECKERS[i])));
                 getSpellChecker().addDictionary(dictionary);
             }
         }
