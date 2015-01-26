@@ -5,11 +5,27 @@ Depends on:
 
 Uses Maven to build (tests are currently broken and need fixing).
 
+```bash
+cd ..
+git clone https://github.com/intere/XMLTransportLayer.git
+cd XMLTranslportLayer
+mvn clean install	# installs XML Transport to your local git repo
+cd ../boggle
+mvn clean install -DskipTests=true # installs the artifact for you, but doesn't execute the tests
+```
 
-    [XMLTransport] $ mvn clean install	# installs XML Transport to your local git repo
-    [XMLTransport] $ cd ../boggle
-    [boggle] $ mvn clean install -DskipTests=true # installs the artifact for you, but doesn't execute the tests
+### Running the Server
+```bash
+./server.sh
+mvn -P server exec:java -Dexec.args="--help"  # HELP!
+mvn -P server exec:java  # Default Options (port 4445)
+```
 
+### Running the Client
+```bash
+mvn -P client exec:java -Dexec.args="--help"   # HELP!
+mvn -P client exec:java -Dexec.args="localhost 4445 Eric"  # Connect to a server on localhost, port 445, with the username: Eric
+```
 
 Entry Points:
 * Client: com.erici.boggle.client.Main
