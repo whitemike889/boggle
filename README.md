@@ -30,3 +30,10 @@ mvn -P client exec:java -Dexec.args="localhost 4445 Eric"  # Connect to a server
 Entry Points:
 * Client: com.erici.boggle.client.Main
 * Server: com.erici.boggle.server.BoggleServer
+
+
+## Screenshots
+
+![Screenshot 1](https://raw.githubusercontent.com/intere/boggle/master/screenshots/Screenshot1.png)
+![Screenshot 2](https://raw.githubusercontent.com/intere/boggle/master/screenshots/Screenshot2.png)
+![Screenshot 3](https://raw.githubusercontent.com/intere/boggle/master/screenshots/Screenshot3.png)
