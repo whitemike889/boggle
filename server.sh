@@ -1,5 +1,5 @@
 #!/bin/bash
 
 ARGS="$@"
-echo mvn --offline -P server exec:java "\"-Dexec.args=${ARGS}\""
-mvn --offline -P server exec:java "\"-Dexec.args=${ARGS}\""
+echo mvn -P server exec:java "\"-Dexec.args=${ARGS}\""
+mvn -P server exec:java "\"-Dexec.args=${ARGS}\""
